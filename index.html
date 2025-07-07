@@ -4,14 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>大人の部活｜青春をもう一度</title>
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@300;500;700&display=swap" rel="stylesheet">
-  <style>body{font-family:"IBM Plex Sans JP",sans-serif}</style>
+
+  <!-- Google Font (Poppins) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>body{font-family:"Poppins",sans-serif}</style>
 </head>
 <body class="bg-white text-slate-800">
 
 <!-- ===== Header ===== -->
-<header class="fixed top-0 inset-x-0 z-30 bg-white/80 backdrop-blur border-b border-slate-200">
+<header class="fixed top-0 inset-x-0 z-30 bg-white/70 backdrop-blur border-b border-slate-200">
   <div class="max-w-6xl mx-auto flex items-center justify-between px-8 py-4">
     <h1 class="text-lg font-semibold tracking-wide">大人の部活</h1>
     <nav>
@@ -26,25 +30,27 @@
   </div>
 </header>
 
-<!-- ===== Hero (背景画像＋30%ホワイト) ===== -->
+<!-- ===== Hero: 青グラデ＋体育館写真 ===== -->
 <section id="hero"
-  class="relative h-[80vh] flex flex-col justify-center items-center text-center px-6 pt-24
-         bg-[url('https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1600&q=60')]
+  class="relative h-[90vh] flex flex-col justify-center items-center text-center px-6 pt-28
+         bg-[url('https://images.unsplash.com/photo-1518033521403-c66951db4ea0?auto=format&fit=crop&w=1600&q=60')]
          bg-center bg-cover bg-no-repeat">
 
-  <!-- 白レイヤー 30% → 背景がうっすら見える -->
-  <span class="absolute inset-0 bg-white/30 backdrop-blur-sm"></span>
+  <!-- 青グラデ・透明30%  -->
+  <span class="absolute inset-0 bg-gradient-to-br from-sky-600/60 to-indigo-900/70"></span>
 
-  <h2 class="relative z-10 text-5xl md:text-7xl font-bold leading-tight tracking-wide text-slate-900">
+  <!-- コピー -->
+  <h2 class="relative z-10 text-5xl md:text-7xl font-extrabold leading-tight tracking-wide text-white drop-shadow-lg">
     社会人でも<br>青春しよう。
   </h2>
-  <p class="relative z-10 mt-8 text-lg md:text-xl text-slate-700 max-w-2xl">
+  <p class="relative z-10 mt-8 text-lg md:text-xl text-slate-100 max-w-2xl">
     月２回、体育館で多種目スポーツを気軽に楽しむコミュニティ。<br>
     経験不問・見学自由。仕事終わりにもう一度ワクワクを。
   </p>
+
   <a href="#join"
-     class="relative z-10 mt-12 inline-block border border-slate-900 px-10 py-3 text-sm tracking-wider
-            hover:bg-slate-900 hover:text-white transition">
+     class="relative z-10 mt-12 inline-block border border-white/80 px-10 py-3 text-sm tracking-wider text-white
+            hover:bg-white hover:text-indigo-900 transition">
      参加する
   </a>
 </section>
@@ -52,10 +58,10 @@
 <!-- ===== About ===== -->
 <section id="about" class="py-28 bg-slate-50">
   <div class="max-w-3xl mx-auto px-6 text-center">
-    <h3 class="text-3xl font-semibold text-slate-900">About&nbsp;Us</h3>
+    <h3 class="text-3xl font-semibold text-indigo-900">About&nbsp;Us</h3>
     <p class="mt-10 leading-relaxed text-lg text-slate-700">
       「大人の部活」は社会人初心者でも気軽に参加できるスポーツサークルです。<br>
-      バスケ・バドミントン・ドッジボールなどを月2回開催。<br>
+      バスケ、バドミントン、ドッジボールなどを月2回開催。<br>
       スポーツを通じて新しい仲間とつながり、ストレスをリセットしませんか？
     </p>
   </div>
@@ -64,20 +70,20 @@
 <!-- ===== Gallery ===== -->
 <section id="gallery" class="py-28">
   <div class="max-w-6xl mx-auto px-6">
-    <h3 class="text-3xl font-semibold text-slate-900 text-center">Photo&nbsp;Gallery</h3>
+    <h3 class="text-3xl font-semibold text-indigo-900 text-center">Photo&nbsp;Gallery</h3>
     <div class="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
       <img src="assets/club_friends.jpg" alt="メンバー集合"
-           class="w-full h-64 object-cover border border-slate-200">
+           class="w-full h-64 object-cover rounded-lg shadow-md ">
       <img src="https://images.unsplash.com/photo-1533106418989-88406c7acffb?w=800&q=80"
-           alt="Basketball" class="w-full h-64 object-cover border border-slate-200">
+           alt="Basketball" class="w-full h-64 object-cover rounded-lg shadow-md ">
       <img src="https://images.unsplash.com/photo-1581196262386-b8d45dcaf1d4?w=800&q=80"
-           alt="Badminton" class="w-full h-64 object-cover border border-slate-200">
+           alt="Badminton" class="w-full h-64 object-cover rounded-lg shadow-md ">
       <img src="https://images.unsplash.com/photo-1555982045-c6e2b37eded3?w=800&q=80"
-           alt="Volleyball" class="w-full h-64 object-cover border border-slate-200">
+           alt="Volleyball" class="w-full h-64 object-cover rounded-lg shadow-md ">
       <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?w=800&q=80"
-           alt="Teamwork" class="w-full h-64 object-cover border border-slate-200">
+           alt="Teamwork" class="w-full h-64 object-cover rounded-lg shadow-md ">
       <img src="https://images.unsplash.com/photo-1584466999943-4ac47dbb9232?w=800&q=80"
-           alt="Fitness" class="w-full h-64 object-cover border border-slate-200">
+           alt="Fitness" class="w-full h-64 object-cover rounded-lg shadow-md ">
     </div>
   </div>
 </section>
@@ -85,8 +91,8 @@
 <!-- ===== Schedule ===== -->
 <section id="schedule" class="py-28 bg-slate-50">
   <div class="max-w-4xl mx-auto px-6 text-center">
-    <h3 class="text-3xl font-semibold text-slate-900">Schedule</h3>
-    <div class="mt-10 border border-slate-200">
+    <h3 class="text-3xl font-semibold text-indigo-900">Schedule</h3>
+    <div class="mt-10 border border-slate-200 rounded-lg overflow-hidden">
       <iframe src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_LINK&ctz=Asia%2FTokyo"
               style="border:0" width="100%" height="550"></iframe>
     </div>
@@ -96,12 +102,12 @@
 <!-- ===== Join ===== -->
 <section id="join" class="py-28">
   <div class="max-w-3xl mx-auto px-6 text-center">
-    <h3 class="text-3xl font-semibold text-slate-900">Join&nbsp;Us</h3>
+    <h3 class="text-3xl font-semibold text-indigo-900">Join&nbsp;Us</h3>
     <p class="mt-8 text-lg text-slate-700">
       まずは見学だけでも大歓迎！<br>
       下記フォームよりお気軽にご連絡ください。
     </p>
-    <div class="mt-12">
+    <div class="mt-12 rounded-lg overflow-hidden shadow-md">
       <iframe src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true"
               width="100%" height="800" frameborder="0">読み込み中...</iframe>
     </div>
@@ -111,10 +117,13 @@
 <!-- ===== Contact ===== -->
 <section id="contact" class="py-28 bg-slate-50">
   <div class="max-w-3xl mx-auto px-6 text-center">
-    <h3 class="text-3xl font-semibold text-slate-900">Contact</h3>
+    <h3 class="text-3xl font-semibold text-indigo-900">Contact</h3>
     <p class="mt-8 text-lg text-slate-700">
-      ご質問は <a href="mailto:yourclub@example.com" class="underline hover:text-slate-900">メール</a> または
-      <a href="https://twitter.com/YOUR_HANDLE" class="underline hover:text-slate-900">X (Twitter)</a> の DM でどうぞ。
+      ご質問は
+      <a href="mailto:yourclub@example.com" class="underline hover:text-indigo-900">メール</a>
+      または
+      <a href="https://twitter.com/YOUR_HANDLE" class="underline hover:text-indigo-900">X (Twitter)</a>
+      の DM でどうぞ。
     </p>
   </div>
 </section>
