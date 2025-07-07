@@ -3,135 +3,148 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>大人の部活｜青春をもう一度</title>
-
-  <!-- Tailwind -->
+  <title>OTONA CLUB｜青春をもう一度</title>
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Google Font (Poppins) -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-  <style>body{font-family:"Poppins",sans-serif}</style>
+  <!-- Tailwindカスタムでアニメーション系ユーティリティを有効化 -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            fadeup: 'fadeup 0.8s ease-out both',
+          },
+          keyframes: {
+            fadeup: {
+              '0%': {opacity:0, transform:'translateY(20px)'},
+              '100%': {opacity:1, transform:'translateY(0)'}
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Google Fonts / Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://unpkg.com"/>
+  <style>body{font-family:'Pretendard',sans-serif;scroll-behavior:smooth}</style>
 </head>
-<body class="bg-white text-slate-800">
+<body class="text-slate-800 bg-white">
 
-<!-- ===== Header ===== -->
-<header class="fixed top-0 inset-x-0 z-30 bg-white/70 backdrop-blur border-b border-slate-200">
-  <div class="max-w-6xl mx-auto flex items-center justify-between px-8 py-4">
-    <h1 class="text-lg font-semibold tracking-wide">大人の部活</h1>
-    <nav>
-      <ul class="flex gap-8 text-sm font-medium text-slate-600">
-        <li><a href="#about"    class="hover:text-slate-900">About</a></li>
-        <li><a href="#schedule" class="hover:text-slate-900">Schedule</a></li>
-        <li><a href="#gallery"  class="hover:text-slate-900">Gallery</a></li>
-        <li><a href="#join"     class="hover:text-slate-900">Join</a></li>
-        <li><a href="#contact"  class="hover:text-slate-900">Contact</a></li>
-      </ul>
-    </nav>
+<!-- ================= NAV ================= -->
+<nav id="nav" class="fixed top-0 inset-x-0 z-40 bg-transparent transition duration-300">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    <span class="text-xl font-extrabold text-white" id="logo">OTONA&nbsp;CLUB</span>
+    <ul class="hidden md:flex gap-10 text-white font-medium text-sm" id="navLinks">
+      <li><a href="#about"    class="hover:opacity-80">About</a></li>
+      <li><a href="#schedule" class="hover:opacity-80">Schedule</a></li>
+      <li><a href="#gallery"  class="hover:opacity-80">Gallery</a></li>
+      <li><a href="#join"     class="hover:opacity-80">Join</a></li>
+      <li><a href="#contact"  class="hover:opacity-80">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header id="hero" class="relative h-screen overflow-hidden">
+  <!-- 背景動画（ループ・ミュート） ※差し替え可 -->
+  <video src="https://cdn.pixabay.com/video/2022/11/02/134704-765192086_large.mp4" autoplay muted loop playsinline
+         class="absolute inset-0 w-full h-full object-cover"></video>
+  <!-- グラデーションオーバーレイ -->
+  <div class="absolute inset-0 bg-gradient-to-b from-sky-600/60 via-indigo-800/70 to-slate-900/80"></div>
+
+  <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-6 text-white">
+    <h1 class="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight drop-shadow-lg animate-fadeup">
+      社会人でも<br class="md:hidden">青春しよう。
+    </h1>
+    <p class="mt-8 text-lg md:text-2xl max-w-2xl animate-fadeup [animation-delay:0.2s]">
+      月2回のスポーツデイで、新しい仲間と本気で汗を流すコミュニティ。
+    </p>
+    <a href="#join" class="mt-12 border-2 border-white px-10 py-3 text-sm tracking-wide font-semibold hover:bg-white hover:text-indigo-900 transition animate-fadeup [animation-delay:0.4s]">
+      参加する
+    </a>
   </div>
 </header>
 
-<!-- ===== Hero: 青グラデ＋体育館写真 ===== -->
-<section id="hero"
-  class="relative h-[90vh] flex flex-col justify-center items-center text-center px-6 pt-28
-         bg-[url('https://images.unsplash.com/photo-1518033521403-c66951db4ea0?auto=format&fit=crop&w=1600&q=60')]
-         bg-center bg-cover bg-no-repeat">
-
-  <!-- 青グラデ・透明30%  -->
-  <span class="absolute inset-0 bg-gradient-to-br from-sky-600/60 to-indigo-900/70"></span>
-
-  <!-- コピー -->
-  <h2 class="relative z-10 text-5xl md:text-7xl font-extrabold leading-tight tracking-wide text-white drop-shadow-lg">
-    社会人でも<br>青春しよう。
-  </h2>
-  <p class="relative z-10 mt-8 text-lg md:text-xl text-slate-100 max-w-2xl">
-    月２回、体育館で多種目スポーツを気軽に楽しむコミュニティ。<br>
-    経験不問・見学自由。仕事終わりにもう一度ワクワクを。
-  </p>
-
-  <a href="#join"
-     class="relative z-10 mt-12 inline-block border border-white/80 px-10 py-3 text-sm tracking-wider text-white
-            hover:bg-white hover:text-indigo-900 transition">
-     参加する
-  </a>
-</section>
-
-<!-- ===== About ===== -->
-<section id="about" class="py-28 bg-slate-50">
-  <div class="max-w-3xl mx-auto px-6 text-center">
-    <h3 class="text-3xl font-semibold text-indigo-900">About&nbsp;Us</h3>
-    <p class="mt-10 leading-relaxed text-lg text-slate-700">
-      「大人の部活」は社会人初心者でも気軽に参加できるスポーツサークルです。<br>
-      バスケ、バドミントン、ドッジボールなどを月2回開催。<br>
-      スポーツを通じて新しい仲間とつながり、ストレスをリセットしませんか？
+<!-- ================= ABOUT ================= -->
+<section id="about" class="py-32 bg-white">
+  <div class="max-w-5xl mx-auto px-6 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-indigo-900 mb-10 animate-fadeup">About&nbsp;Us</h2>
+    <p class="text-lg leading-relaxed text-slate-700 animate-fadeup [animation-delay:0.1s]">
+      OTONA CLUBは、バスケ・バドミントン・ドッジボールなど<br class="hidden md:inline">多種目を月2回楽しむ大人の部活コミュニティ。<br>
+      経験・年齢は一切不問。青春のドキドキをもう一度。
     </p>
   </div>
 </section>
 
-<!-- ===== Gallery ===== -->
-<section id="gallery" class="py-28">
-  <div class="max-w-6xl mx-auto px-6">
-    <h3 class="text-3xl font-semibold text-indigo-900 text-center">Photo&nbsp;Gallery</h3>
-    <div class="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-      <img src="assets/club_friends.jpg" alt="メンバー集合"
-           class="w-full h-64 object-cover rounded-lg shadow-md ">
-      <img src="https://images.unsplash.com/photo-1533106418989-88406c7acffb?w=800&q=80"
-           alt="Basketball" class="w-full h-64 object-cover rounded-lg shadow-md ">
-      <img src="https://images.unsplash.com/photo-1581196262386-b8d45dcaf1d4?w=800&q=80"
-           alt="Badminton" class="w-full h-64 object-cover rounded-lg shadow-md ">
-      <img src="https://images.unsplash.com/photo-1555982045-c6e2b37eded3?w=800&q=80"
-           alt="Volleyball" class="w-full h-64 object-cover rounded-lg shadow-md ">
-      <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?w=800&q=80"
-           alt="Teamwork" class="w-full h-64 object-cover rounded-lg shadow-md ">
-      <img src="https://images.unsplash.com/photo-1584466999943-4ac47dbb9232?w=800&q=80"
-           alt="Fitness" class="w-full h-64 object-cover rounded-lg shadow-md ">
+<!-- ================= SCHEDULE ================= -->
+<section id="schedule" class="py-32 bg-gradient-to-b from-slate-50 via-slate-100 to-slate-50">
+  <div class="max-w-5xl mx-auto px-6 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-indigo-900 mb-12 animate-fadeup">Schedule</h2>
+    <div class="border border-slate-200 rounded-xl overflow-hidden shadow animate-fadeup [animation-delay:0.2s]">
+      <iframe src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_LINK&ctz=Asia%2FTokyo" width="100%" height="600" frameborder="0" loading="lazy"></iframe>
     </div>
   </div>
 </section>
 
-<!-- ===== Schedule ===== -->
-<section id="schedule" class="py-28 bg-slate-50">
+<!-- ================= GALLERY ================= -->
+<section id="gallery" class="py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-indigo-900 text-center mb-12">Gallery</h2>
+    <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 [column-fill:balance]">
+      <!-- Masonry-esque layout -->
+      <img src="assets/club_friends.jpg" alt="Club friends" class="mb-6 rounded-lg shadow-md w-full">
+      <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=900&q=60" class="mb-6 rounded-lg shadow-md w-full">
+      <img src="https://images.unsplash.com/photo-1533106418989-88406c7acffb?auto=format&fit=crop&w=900&q=60" class="mb-6 rounded-lg shadow-md w-full">
+      <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=900&q=60" class="mb-6 rounded-lg shadow-md w-full">
+      <img src="https://images.unsplash.com/photo-1581196262386-b8d45dcaf1d4?auto=format&fit=crop&w=900&q=60" class="mb-6 rounded-lg shadow-md w-full">
+      <img src="https://images.unsplash.com/photo-1599058917213-09ac0e472532?auto=format&fit=crop&w=900&q=60" class="mb-6 rounded-lg shadow-md w-full">
+    </div>
+  </div>
+</section>
+
+<!-- ================= JOIN ================= -->
+<section id="join" class="py-32 bg-gradient-to-br from-indigo-700 to-sky-600 text-white">
   <div class="max-w-4xl mx-auto px-6 text-center">
-    <h3 class="text-3xl font-semibold text-indigo-900">Schedule</h3>
-    <div class="mt-10 border border-slate-200 rounded-lg overflow-hidden">
-      <iframe src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_LINK&ctz=Asia%2FTokyo"
-              style="border:0" width="100%" height="550"></iframe>
+    <h2 class="text-3xl md:text-4xl font-bold mb-10 animate-fadeup">Join&nbsp;Us</h2>
+    <p class="text-lg mb-12 animate-fadeup [animation-delay:0.1s]">見学申込・質問はフォームからどうぞ</p>
+    <div class="rounded-xl overflow-hidden shadow-xl animate-fadeup [animation-delay:0.2s]">
+      <iframe src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" width="100%" height="750" frameborder="0" loading="lazy">Loading…</iframe>
     </div>
   </div>
 </section>
 
-<!-- ===== Join ===== -->
-<section id="join" class="py-28">
-  <div class="max-w-3xl mx-auto px-6 text-center">
-    <h3 class="text-3xl font-semibold text-indigo-900">Join&nbsp;Us</h3>
-    <p class="mt-8 text-lg text-slate-700">
-      まずは見学だけでも大歓迎！<br>
-      下記フォームよりお気軽にご連絡ください。
-    </p>
-    <div class="mt-12 rounded-lg overflow-hidden shadow-md">
-      <iframe src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true"
-              width="100%" height="800" frameborder="0">読み込み中...</iframe>
-    </div>
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="py-24 bg-slate-900 text-white">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-8">Contact</h2>
+    <p class="text-lg">ご質問は <a href="mailto:yourclub@example.com" class="underline">メール</a> または <a href="https://twitter.com/YOUR_HANDLE" class="underline">X (Twitter)</a> へ</p>
   </div>
 </section>
 
-<!-- ===== Contact ===== -->
-<section id="contact" class="py-28 bg-slate-50">
-  <div class="max-w-3xl mx-auto px-6 text-center">
-    <h3 class="text-3xl font-semibold text-indigo-900">Contact</h3>
-    <p class="mt-8 text-lg text-slate-700">
-      ご質問は
-      <a href="mailto:yourclub@example.com" class="underline hover:text-indigo-900">メール</a>
-      または
-      <a href="https://twitter.com/YOUR_HANDLE" class="underline hover:text-indigo-900">X (Twitter)</a>
-      の DM でどうぞ。
-    </p>
-  </div>
-</section>
+<!-- ================= FOOTER ================= -->
+<footer class="py-8 text-center text-sm text-slate-500 bg-slate-950">© 2025 OTONA CLUB</footer>
 
-<!-- ===== Footer ===== -->
-<footer class="py-10 text-center text-sm text-slate-500">
-  © 2025 大人の部活
-</footer>
+<!-- ================= Scroll & Nav color ================= -->
+<script>
+  const nav = document.getElementById('nav');
+  const logo = document.getElementById('logo');
+  const navLinks = document.getElementById('navLinks');
+  window.addEventListener('scroll', ()=>{
+    if(window.scrollY>80){
+      nav.classList.add('bg-white/90','backdrop-blur','shadow');
+      logo.classList.remove('text-white');
+      logo.classList.add('text-indigo-900');
+      [...navLinks.children].forEach(li=>li.firstChild.classList.remove('text-white'));
+      [...navLinks.children].forEach(li=>li.firstChild.classList.add('text-slate-800'));
+    }else{
+      nav.classList.remove('bg-white/90','backdrop-blur','shadow');
+      logo.classList.add('text-white');
+      logo.classList.remove('text-indigo-900');
+      [...navLinks.children].forEach(li=>li.firstChild.classList.add('text-white'));
+      [...navLinks.children].forEach(li=>li.firstChild.classList.remove('text-slate-800'));
+    }
+  });
+</script>
 
 </body>
 </html>
