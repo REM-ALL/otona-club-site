@@ -3,9 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>大人の部活</title>
+  <title>大人の部活｜青春をもう一度</title>
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Font: IBM Plex Sans JP (細めで上品) -->
+
+  <!-- Google Font（ミニマルで上品） -->
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@300;500;700&display=swap" rel="stylesheet">
   <style>body{font-family:"IBM Plex Sans JP",sans-serif}</style>
 </head>
@@ -27,17 +30,25 @@
   </div>
 </header>
 
-<!-- ===== Hero  =========================================== -->
-<section id="hero" class="min-h-[90vh] flex flex-col justify-center items-center text-center px-6 pt-24">
-  <h2 class="text-5xl md:text-7xl font-bold leading-tight tracking-wide text-slate-900">
+<!-- ===== Hero（背景写真＋うっすらホワイト） =========== -->
+<section id="hero"
+         class="relative h-[80vh] flex flex-col justify-center items-center text-center px-6 pt-24
+                bg-[url('https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1600&q=60')]
+                bg-center bg-cover bg-no-repeat">
+
+  <!-- 半透明ホワイトレイヤー -->
+  <span class="absolute inset-0 bg-white/70 backdrop-blur-sm"></span>
+
+  <h2 class="relative z-10 text-5xl md:text-7xl font-bold leading-tight tracking-wide text-slate-900">
     社会人でも<br>青春しよう。
   </h2>
-  <p class="mt-8 text-lg md:text-xl text-slate-600 max-w-2xl">
+  <p class="relative z-10 mt-8 text-lg md:text-xl text-slate-700 max-w-2xl">
     月２回、体育館で多種目スポーツを気軽に楽しむコミュニティ。<br>
     経験不問・見学自由。仕事終わりにもう一度ワクワクを。
   </p>
-  <a href="#join" class="mt-12 inline-block border border-slate-900 px-10 py-3 text-sm tracking-wider
-                         hover:bg-slate-900 hover:text-white transition">
+  <a href="#join"
+     class="relative z-10 mt-12 inline-block border border-slate-900 px-10 py-3 text-sm tracking-wider
+            hover:bg-slate-900 hover:text-white transition">
      参加する
   </a>
 </section>
@@ -45,7 +56,7 @@
 <!-- ===== About  =========================================== -->
 <section id="about" class="py-28 bg-slate-50">
   <div class="max-w-3xl mx-auto px-6 text-center">
-    <h3 class="text-3xl font-semibold text-slate-900">About Us</h3>
+    <h3 class="text-3xl font-semibold text-slate-900">About&nbsp;Us</h3>
     <p class="mt-10 leading-relaxed text-lg text-slate-700">
       「大人の部活」は社会人初心者でも気軽に参加できるスポーツサークルです。<br>
       バスケ・バドミントン・ドッジボールなどを月2回開催。<br>
@@ -57,14 +68,14 @@
 <!-- ===== Gallery ========================================== -->
 <section id="gallery" class="py-28">
   <div class="max-w-6xl mx-auto px-6">
-    <h3 class="text-3xl font-semibold text-slate-900 text-center">Photo Gallery</h3>
+    <h3 class="text-3xl font-semibold text-slate-900 text-center">Photo&nbsp;Gallery</h3>
 
     <div class="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-      <!-- あなたの写真 -->
+      <!-- あなたの集合写真 -->
       <img src="assets/club_friends.jpg" alt="メンバー集合"
            class="w-full h-64 object-cover border border-slate-200">
 
-      <!-- サンプル *大人っぽい色味の Unsplash* -->
+      <!-- 参考イメージ（Unsplash） -->
       <img src="https://images.unsplash.com/photo-1533106418989-88406c7acffb?w=800&q=80"
            alt="Basketball" class="w-full h-64 object-cover border border-slate-200">
       <img src="https://images.unsplash.com/photo-1581196262386-b8d45dcaf1d4?w=800&q=80"
@@ -93,7 +104,7 @@
 <!-- ===== Join ============================================= -->
 <section id="join" class="py-28">
   <div class="max-w-3xl mx-auto px-6 text-center">
-    <h3 class="text-3xl font-semibold text-slate-900">Join Us</h3>
+    <h3 class="text-3xl font-semibold text-slate-900">Join&nbsp;Us</h3>
     <p class="mt-8 text-lg text-slate-700">
       まずは見学だけでも大歓迎！<br>
       下記フォームよりお気軽にご連絡ください。
